@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gentemstick Search Hub - スノーボード中古検索</title>
+<meta name="description" content="ヤフオク・メルカリ・ヤフーフリマのgentemstick出品をまとめて検索。価格帯やキーワードを自由に変更可能。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f0f2f5;
+    --card-bg: #ffffff;
+    --text: #1a1a2e;
+    --text-sub: #6b7280;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --accent-hover: #1d4ed8;
+    --border: #e5e7eb;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --price-color: #dc2626;
+    --yahoo-bg: #fff7ed; --yahoo-color: #c2410c; --yahoo-border: #fed7aa;
+    --mercari-bg: #eff6ff; --mercari-color: #1d4ed8; --mercari-border: #bfdbfe;
+    --yfm-bg: #faf5ff; --yfm-color: #7c3aed; --yfm-border: #ddd6fe;
+    --gradient-start: #2563eb;
+    --gradient-end: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Noto Sans JP', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: #fff;
+    padding: 32px 24px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .hero h1 .emoji { font-size: 1.4rem; margin-right: 8px; }
+  .hero .subtitle {
+    font-size: 0.82rem;
+    opacity: 0.85;
+    font-weight: 400;
+  }
+
+  /* ===== SEARCH CONTROLS ===== */
+  .controls-wrap {
+    max-width: 1200px;
+    margin: -20px auto 0;
+    padding: 0 16px;
+    position: relative;
+    z-index: 10;
+  }
+  .controls {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 20px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+  }
+  .control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 140px;
+  }
+  .control-group label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .control-group input {
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--text);
+    background: #fafbfc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    width: 100%;
+  }
+  .control-group input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-light);
+    background: #fff;
+  }
+  .control-group input[type="number"] {
+    max-width: 160px;
+  }
+  .price-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  .price-group .separator {
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    padding-bottom: 10px;
+    font-weight: 500;
+  }
+  .btn-search {
+    padding: 10px 28px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 42px;
+  }
+  .btn-search:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37,99,235,0.35);
+  }
+  .btn-search:active {
+    transform: translateY(0);
+  }
+
+  /* ===== SITE LINKS ===== */
+  .site-links-bar {
+    max-width: 1200px;
+    margin: 16px auto 0;
+    padding: 0 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .site-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: var(--shadow-sm);
+  }
+  .site-link:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  .site-link.yahoo {
+    background: var(--yahoo-bg);
+    color: var(--yahoo-color);
+    border: 1px solid var(--yahoo-border);
+  }
+  .site-link.mercari {
+    background: var(--mercari-bg);
+    color: var(--mercari-color);
+    border: 1px solid var(--mercari-border);
+  }
+  .site-link.yfm {
+    background: var(--yfm-bg);
+    color: var(--yfm-color);
+    border: 1px solid var(--yfm-border);
+  }
+  .site-link .arrow { font-size: 0.7rem; opacity: 0.7; }
+
+  /* ===== STATUS BAR ===== */
+  .status-bar {
+    max-width: 1200px;
+    margin: 16px auto 0;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .status-info {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .status-info .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .sort-toggle {
+    display: flex;
+    gap: 4px;
+    background: var(--card-bg);
+    border-radius: 100px;
+    padding: 3px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+  }
+  .sort-btn {
+    padding: 5px 14px;
+    border: none;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--text-sub);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .sort-btn.active {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(37,99,235,0.3);
+  }
+
+  /* ===== GRID ===== */
+  .grid-container {
+    max-width: 1200px;
+    margin: 16px auto 0;
+    padding: 0 16px 32px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  /* ===== CARD ===== */
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s cubic-bezier(.4,0,.2,1), box-shadow 0.2s;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .card:hover .card-img img {
+    transform: scale(1.04);
+  }
+  .card-img {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #f3f4f6;
+    position: relative;
+  }
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+  }
+  .no-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d1d5db;
+    font-size: 0.8rem;
+  }
+  .card-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 700;
+    backdrop-filter: blur(8px);
+    letter-spacing: 0.01em;
+  }
+  .card-badge.badge-yahoo {
+    background: rgba(194,65,12,0.12);
+    color: var(--yahoo-color);
+    border: 1px solid rgba(194,65,12,0.2);
+  }
+  .card-badge.badge-mercari {
+    background: rgba(29,78,216,0.1);
+    color: var(--mercari-color);
+    border: 1px solid rgba(29,78,216,0.2);
+  }
+  .card-badge.badge-yfm {
+    background: rgba(124,58,237,0.1);
+    color: var(--yfm-color);
+    border: 1px solid rgba(124,58,237,0.2);
+  }
+  .card-info {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+  .card-title {
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #374151;
+  }
+  .card-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--price-color);
+    letter-spacing: -0.02em;
+    margin-top: auto;
+  }
+
+  /* ===== EMPTY STATE ===== */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-sub);
+  }
+  .empty-state .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    opacity: 0.5;
+  }
+  .empty-state p {
+    font-size: 0.9rem;
+  }
+
+  /* ===== LOADING ===== */
+  .loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-sub);
+  }
+  .spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 24px 16px;
+    color: var(--text-sub);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+    background: var(--card-bg);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .hero { padding: 24px 16px 20px; }
+    .hero h1 { font-size: 1.2rem; }
+    .controls { padding: 16px; gap: 10px; }
+    .control-group { min-width: 100%; }
+    .price-group { flex-wrap: wrap; }
+    .price-group .control-group { min-width: 100px; flex: 1; }
+    .btn-search { width: 100%; justify-content: center; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+    .card-info { padding: 10px; }
+    .card-title { font-size: 0.75rem; }
+    .card-price { font-size: 1rem; }
+  }
+
+  /* ===== FILTER CHIPS ===== */
+  .filter-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: inherit;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-sub);
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .chip.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .chip .count {
+    margin-left: 4px;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <h1><span class="emoji">🏂</span>Gentemstick Search Hub</h1>
+    <div class="subtitle">ヤフオク・メルカリ・ヤフーフリマの出品をまとめて検索</div>
+  </div>
+</div>
+
+<!-- SEARCH CONTROLS -->
+<div class="controls-wrap">
+  <div class="controls" id="searchControls">
+    <div class="control-group" style="flex: 2; min-width: 200px;">
+      <label for="keyword">🔍 キーワード</label>
+      <input type="text" id="keyword" value="gentemstick" placeholder="例: gentemstick">
+    </div>
+    <div class="price-group">
+      <div class="control-group">
+        <label for="priceMin">最低価格 (¥)</label>
+        <input type="number" id="priceMin" value="30000" step="5000" min="0" placeholder="30000">
+      </div>
+      <span class="separator">〜</span>
+      <div class="control-group">
+        <label for="priceMax">最高価格 (¥)</label>
+        <input type="number" id="priceMax" value="90000" step="5000" min="0" placeholder="90000">
+      </div>
+    </div>
+    <button class="btn-search" id="btnApply" onclick="applyFilters()">
+      <span>🔄</span> 再検索
+    </button>
+  </div>
+</div>
+
+<!-- SITE LINKS -->
+<div class="site-links-bar" id="siteLinks">
+  <a class="site-link yahoo" id="linkYahoo" href="#" target="_blank">
+    ヤフオクで検索 <span class="arrow">↗</span>
+  </a>
+  <a class="site-link mercari" id="linkMercari" href="#" target="_blank">
+    メルカリで検索 <span class="arrow">↗</span>
+  </a>
+  <a class="site-link yfm" id="linkYfm" href="#" target="_blank">
+    ヤフーフリマで検索 <span class="arrow">↗</span>
+  </a>
+</div>
+
+<!-- STATUS BAR -->
+<div class="status-bar" id="statusBar">
+  <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+    <div class="status-info">
+      <span class="dot"></span>
+      <span id="statusText">読み込み中...</span>
+    </div>
+    <div class="filter-chips" id="filterChips">
+      <button class="chip active" data-filter="all" onclick="filterBySite('all')">すべて</button>
+      <button class="chip" data-filter="ヤフオク" onclick="filterBySite('ヤフオク')">ヤフオク</button>
+      <button class="chip" data-filter="メルカリ" onclick="filterBySite('メルカリ')">メルカリ</button>
+      <button class="chip" data-filter="ヤフーフリマ" onclick="filterBySite('ヤフーフリマ')">ヤフーフリマ</button>
+    </div>
+  </div>
+  <div class="sort-toggle">
+    <button class="sort-btn active" data-sort="asc" onclick="changeSort('asc')">安い順</button>
+    <button class="sort-btn" data-sort="desc" onclick="changeSort('desc')">高い順</button>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid-container">
+  <div class="grid" id="resultsGrid">
+    <div class="loading" style="grid-column: 1 / -1;">
+      <div class="spinner"></div>
+      <p>データを読み込み中...</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer" id="footer">
+  Gentemstick Search Hub — ヤフオク / メルカリ / ヤフーフリマ
+</div>
+
+<script>
+// ===== STATE =====
+let allItems = [];
+let currentSort = 'asc';
+let currentFilter = 'all';
+let dataLastUpdated = '';
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  loadData();
+  updateSiteLinks();
+
+  // Enter key on inputs
+  document.querySelectorAll('#searchControls input').forEach(input => {
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') applyFilters();
+    });
+  });
+});
+
+// ===== DATA LOADING =====
+async function loadData() {
+  try {
+    const res = await fetch('data.json?t=' + Date.now());
+    if (!res.ok) throw new Error('data.json not found');
+    const data = await res.json();
+    allItems = data.items || [];
+    dataLastUpdated = data.lastUpdated || '';
+    renderItems();
+  } catch (err) {
+    // If data.json doesn't exist, show empty state with links
+    allItems = [];
+    renderItems();
+    console.log('data.json not loaded:', err.message);
+  }
+}
+
+// ===== PRICE PARSING =====
+function parsePrice(priceStr) {
+  const num = String(priceStr).replace(/[^\d]/g, '');
+  return num ? parseInt(num, 10) : 9999999;
+}
+
+// ===== FILTERING & SORTING =====
+function getFilteredItems() {
+  const minPrice = parseInt(document.getElementById('priceMin').value) || 0;
+  const maxPrice = parseInt(document.getElementById('priceMax').value) || 9999999;
+
+  let items = allItems.filter(item => {
+    const price = parsePrice(item.price);
+    const inPriceRange = price >= minPrice && price <= maxPrice;
+    const inSiteFilter = currentFilter === 'all' || item.site === currentFilter;
+    return inPriceRange && inSiteFilter;
+  });
+
+  items.sort((a, b) => {
+    const pa = parsePrice(a.price);
+    const pb = parsePrice(b.price);
+    return currentSort === 'asc' ? pa - pb : pb - pa;
+  });
+
+  return items;
+}
+
+// ===== RENDER =====
+function renderItems() {
+  const grid = document.getElementById('resultsGrid');
+  const items = getFilteredItems();
+
+  // Update status
+  const keyword = document.getElementById('keyword').value;
+  const minPrice = parseInt(document.getElementById('priceMin').value) || 0;
+  const maxPrice = parseInt(document.getElementById('priceMax').value) || 9999999;
+  const updatedStr = dataLastUpdated ? ` ｜ 最終更新: ${dataLastUpdated}` : '';
+  document.getElementById('statusText').textContent =
+    `${items.length}件の結果 — ¥${minPrice.toLocaleString()}〜¥${maxPrice.toLocaleString()}${updatedStr}`;
+
+  // Update chip counts
+  updateChipCounts();
+
+  if (items.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-state" style="grid-column: 1 / -1;">
+        <div class="empty-icon">🔍</div>
+        <p>該当する商品が見つかりませんでした</p>
+        <p style="font-size:0.8rem; margin-top:8px; opacity:0.7;">キーワードや価格帯を変更して再検索してください。<br>または上のリンクから各サイトで直接検索できます。</p>
+      </div>`;
+    return;
+  }
+
+  grid.innerHTML = items.map(item => {
+    const badgeClass = item.site === 'ヤフオク' ? 'badge-yahoo'
+                     : item.site === 'メルカリ' ? 'badge-mercari'
+                     : 'badge-yfm';
+    const imgHtml = item.image
+      ? `<img src="${item.image}" alt="" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'no-img\\'>NO IMAGE</div>'">`
+      : '<div class="no-img">NO IMAGE</div>';
+
+    // Format price
+    let displayPrice = item.price;
+    const priceNum = parsePrice(item.price);
+    if (priceNum < 9999999) {
+      displayPrice = '¥' + priceNum.toLocaleString();
+    }
+
+    return `
+      <a class="card" href="${item.link}" target="_blank" rel="noopener">
+        <div class="card-img">
+          ${imgHtml}
+          <span class="card-badge ${badgeClass}">${item.site}</span>
+        </div>
+        <div class="card-info">
+          <div class="card-title">${item.title}</div>
+          <div class="card-price">${displayPrice}</div>
+        </div>
+      </a>`;
+  }).join('');
+}
+
+function updateChipCounts() {
+  const minPrice = parseInt(document.getElementById('priceMin').value) || 0;
+  const maxPrice = parseInt(document.getElementById('priceMax').value) || 9999999;
+
+  const filteredByPrice = allItems.filter(item => {
+    const price = parsePrice(item.price);
+    return price >= minPrice && price <= maxPrice;
+  });
+
+  const counts = {
+    all: filteredByPrice.length,
+    'ヤフオク': filteredByPrice.filter(i => i.site === 'ヤフオク').length,
+    'メルカリ': filteredByPrice.filter(i => i.site === 'メルカリ').length,
+    'ヤフーフリマ': filteredByPrice.filter(i => i.site === 'ヤフーフリマ').length,
+  };
+
+  document.querySelectorAll('#filterChips .chip').forEach(chip => {
+    const filter = chip.dataset.filter;
+    const countSpan = chip.querySelector('.count');
+    if (countSpan) countSpan.remove();
+    const span = document.createElement('span');
+    span.className = 'count';
+    span.textContent = `(${counts[filter] || 0})`;
+    chip.appendChild(span);
+  });
+}
+
+// ===== ACTIONS =====
+function applyFilters() {
+  updateSiteLinks();
+  renderItems();
+}
+
+function filterBySite(site) {
+  currentFilter = site;
+  document.querySelectorAll('#filterChips .chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.filter === site);
+  });
+  renderItems();
+}
+
+function changeSort(dir) {
+  currentSort = dir;
+  document.querySelectorAll('.sort-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.sort === dir);
+  });
+  renderItems();
+}
+
+function updateSiteLinks() {
+  const keyword = encodeURIComponent(document.getElementById('keyword').value || 'gentemstick');
+  const minPrice = document.getElementById('priceMin').value || '30000';
+  const maxPrice = document.getElementById('priceMax').value || '90000';
+
+  document.getElementById('linkYahoo').href =
+    `https://auctions.yahoo.co.jp/search/search?p=${keyword}&aucminprice=${minPrice}&aucmaxprice=${maxPrice}`;
+  document.getElementById('linkMercari').href =
+    `https://jp.mercari.com/search?keyword=${keyword}&price_min=${minPrice}&price_max=${maxPrice}`;
+  document.getElementById('linkYfm').href =
+    `https://paypayfleamarket.yahoo.co.jp/search/${keyword}?price_range_begin=${minPrice}&price_range_end=${maxPrice}`;
+}
+</script>
+
+</body>
+</html>

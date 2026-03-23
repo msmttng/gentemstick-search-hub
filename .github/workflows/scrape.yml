@@ -1,0 +1,85 @@
+name: Scrape & Deploy
+
+on:
+  schedule:
+    # 6時間ごとに実行 (UTC: 0, 6, 12, 18 → JST: 9, 15, 21, 3)
+    - cron: '0 0,6,12,18 * * *'
+  workflow_dispatch:
+    inputs:
+      keyword:
+        description: '検索キーワード'
+        required: false
+        default: 'gentemstick'
+      min_price:
+        description: '最低価格'
+        required: false
+        default: '30000'
+      max_price:
+        description: '最高価格'
+        required: false
+        default: '90000'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 playwright
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Run scraper
+        run: |
+          KEYWORD="${{ github.event.inputs.keyword || 'gentemstick' }}"
+          MIN_PRICE="${{ github.event.inputs.min_price || '30000' }}"
+          MAX_PRICE="${{ github.event.inputs.max_price || '90000' }}"
+          python gentemstick_search.py --keyword "$KEYWORD" --min-price "$MIN_PRICE" --max-price "$MAX_PRICE" --json-only
+
+      - name: Commit data.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet || git commit -m "📊 Update search data $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
+
+  deploy:
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Pull latest changes
+        run: git pull origin main
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
