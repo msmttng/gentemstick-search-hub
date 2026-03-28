@@ -2,8 +2,8 @@
   "keyword": "gentemstick",
   "minPrice": 30000,
   "maxPrice": 90000,
-  "lastUpdated": "2026/03/27 19:04",
-  "totalCount": 31,
+  "lastUpdated": "2026/03/28 02:46",
+  "totalCount": 32,
   "items": [
     {
       "title": "送料無料",
@@ -17,6 +17,13 @@
       "price": "90,000円",
       "link": "https://auctions.yahoo.co.jp/jp/auction/q1222313419",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/704c15c7f8f2c341ee19a680cae2c1bea9f6cb9d301fa88ce412d4a10a53bf62/i-img900x1200-1773042061228878tyr8cu8.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフオク"
+    },
+    {
+      "title": "10%対象",
+      "price": "47,000円",
+      "link": "https://auctions.yahoo.co.jp/jp/auction/w1224471239",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/3e0ca9a74b4d7038741404c880e34ddc4734630e7ab0f3956c02979155ddd6b9/i-img900x1200-17746550971984cbv6ss2879.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフオク"
     },
     {
