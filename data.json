@@ -2,14 +2,21 @@
   "keyword": "gentemstick",
   "minPrice": 30000,
   "maxPrice": 90000,
-  "lastUpdated": "2026/03/29 13:11",
-  "totalCount": 24,
+  "lastUpdated": "2026/03/29 18:55",
+  "totalCount": 27,
   "items": [
     {
       "title": "送料無料",
       "price": "90,000円",
       "link": "https://auctions.yahoo.co.jp/jp/auction/q1222313419",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/704c15c7f8f2c341ee19a680cae2c1bea9f6cb9d301fa88ce412d4a10a53bf62/i-img900x1200-1773042061228878tyr8cu8.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフオク"
+    },
+    {
+      "title": "送料無料",
+      "price": "42,000円",
+      "link": "https://auctions.yahoo.co.jp/jp/auction/n1213112651",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0112/user/c9728771423e55d1ac28a58dc3d66fa006c5ad7a8e876d91d97b78f78807d333/i-img1200x900-17662044852552kvj2sb12672.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフオク"
     },
     {
@@ -24,6 +31,13 @@
       "price": "80,000円",
       "link": "https://auctions.yahoo.co.jp/jp/auction/c1209021908",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0111/user/0a37709d48ae27eb836a9fdb8fa8c5683fb43dd57e0a97228c543c73d97969ba/i-img1200x900-1763960985247914kx7cdu8.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフオク"
+    },
+    {
+      "title": "New!!",
+      "price": "60,000円",
+      "link": "https://auctions.yahoo.co.jp/jp/auction/x1185489904",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0105/user/5ced48228c5712f4ee8eab2b39a9330eef43c9de5f86a27ff5f12a10c7d5fe9c/i-img900x1200-17476571559202qs62ya35.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフオク"
     },
     {
@@ -48,13 +62,6 @@
       "site": "ヤフーフリマ"
     },
     {
-      "title": "JONES Freecarver 6000s 154 美品　jones freecarver スノーボード カービング パウダー",
-      "price": "74,800円",
-      "link": "https://paypayfleamarket.yahoo.co.jp/item/z561727042",
-      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0202/users/dc3b6fcb11122846e334c338ef48e6bc7f893ceb/i-img900x1200-1771419559804svaw6w.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-      "site": "ヤフーフリマ"
-    },
-    {
       "title": "ゲンテン　gentemstick JALKA 125 パウダーボード ゲンテンスティック",
       "price": "58,000円",
       "link": "https://paypayfleamarket.yahoo.co.jp/item/z565437634",
@@ -62,10 +69,17 @@
       "site": "ヤフーフリマ"
     },
     {
-      "title": "TARO TAMAI SNOWSURF K2 TT 26.5cm ブーツ TARO TAMAI BOA gentemstick",
-      "price": "49,800円",
-      "link": "https://paypayfleamarket.yahoo.co.jp/item/z571128888",
-      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/users/6340aa60ff873f7ac65a8f088b0d5be8f60fa9d9/i-img900x1200-1772851017117tmd0f2.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "title": "JONES Freecarver 6000s 154 美品　jones freecarver スノーボード カービング パウダー",
+      "price": "74,800円",
+      "link": "https://paypayfleamarket.yahoo.co.jp/item/z561727042",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0202/users/dc3b6fcb11122846e334c338ef48e6bc7f893ceb/i-img900x1200-1771419559804svaw6w.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフーフリマ"
+    },
+    {
+      "title": "★送料無料★GENTEMSTICK フローター 161 FLOATER ゲンテン スティック パウダー カービング GENTEM ",
+      "price": "42,000円",
+      "link": "https://paypayfleamarket.yahoo.co.jp/item/n1213112651",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0112/user/c9728771423e55d1ac28a58dc3d66fa006c5ad7a8e876d91d97b78f78807d333/i-img1200x900-17662044852552kvj2sb12672.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフーフリマ"
     },
     {
@@ -73,6 +87,13 @@
       "price": "63,800円",
       "link": "https://paypayfleamarket.yahoo.co.jp/item/z538575506",
       "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0201/users/60441925147863b190308c0fda31b96cb38d0afe/i-img675x1200-17675877593234sbgyt.jpg",
+      "site": "ヤフーフリマ"
+    },
+    {
+      "title": "TARO TAMAI SNOWSURF K2 TT 26.5cm ブーツ TARO TAMAI BOA gentemstick",
+      "price": "49,800円",
+      "link": "https://paypayfleamarket.yahoo.co.jp/item/z571128888",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/users/6340aa60ff873f7ac65a8f088b0d5be8f60fa9d9/i-img900x1200-1772851017117tmd0f2.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフーフリマ"
     },
     {
@@ -132,6 +153,13 @@
       "site": "ヤフーフリマ"
     },
     {
+      "title": "blooperbackpacks×aratasuzumura バックパック 容量30L バックカントリー スノーボード スキー",
+      "price": "59,000円",
+      "link": "https://paypayfleamarket.yahoo.co.jp/item/z545733286",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0201/users/fcb35c314444045be2802eb21a229d800483d404/i-img878x1200-17688206978382to2v2.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフーフリマ"
+    },
+    {
       "title": "RAD AIR TANKER 182 ラッドエアー タンカー 美品　パウダー",
       "price": "43,600円",
       "link": "https://paypayfleamarket.yahoo.co.jp/item/z261240350",
@@ -143,13 +171,6 @@
       "price": "73,500円",
       "link": "https://paypayfleamarket.yahoo.co.jp/item/z533993936",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0112/users/6832ae94b094b117d481b8182ed3cd9af3a99033/i-img1200x1200-1766719599285259che.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-      "site": "ヤフーフリマ"
-    },
-    {
-      "title": "blooperbackpacks×aratasuzumura バックパック 容量30L バックカントリー スノーボード スキー",
-      "price": "59,000円",
-      "link": "https://paypayfleamarket.yahoo.co.jp/item/z545733286",
-      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0201/users/fcb35c314444045be2802eb21a229d800483d404/i-img878x1200-17688206978382to2v2.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフーフリマ"
     },
     {
