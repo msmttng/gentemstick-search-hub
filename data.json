@@ -2,7 +2,7 @@
   "keyword": "gentemstick",
   "minPrice": 30000,
   "maxPrice": 90000,
-  "lastUpdated": "2026/04/04 13:11",
+  "lastUpdated": "2026/04/04 18:54",
   "totalCount": 26,
   "items": [
     {
@@ -21,6 +21,13 @@
     },
     {
       "title": "送料無料",
+      "price": "40,000円",
+      "link": "https://auctions.yahoo.co.jp/jp/auction/s1219106090",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0202/user/8e271d8887b05e9bbf2fbe5802977e11646a562791bd54576f7b4caa0a305b13/i-img900x1200-17706875966918m4yzki36.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフオク"
+    },
+    {
+      "title": "送料無料",
       "price": "42,000円",
       "link": "https://auctions.yahoo.co.jp/jp/auction/n1213112651",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0112/user/c9728771423e55d1ac28a58dc3d66fa006c5ad7a8e876d91d97b78f78807d333/i-img1200x900-17662044852552kvj2sb12672.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
@@ -31,13 +38,6 @@
       "price": "82,000円",
       "link": "https://auctions.yahoo.co.jp/jp/auction/b1221924558",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/65fd846d096d1dd67163de67f184218ad847f2b2152bd23841e2fc0b5f4e010c/i-img480x640-17727548236657l4nvtq34.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-      "site": "ヤフオク"
-    },
-    {
-      "title": "送料無料",
-      "price": "40,000円",
-      "link": "https://auctions.yahoo.co.jp/jp/auction/s1219106090",
-      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0202/user/8e271d8887b05e9bbf2fbe5802977e11646a562791bd54576f7b4caa0a305b13/i-img900x1200-17706875966918m4yzki36.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフオク"
     },
     {
@@ -83,13 +83,6 @@
       "site": "ヤフーフリマ"
     },
     {
-      "title": "K2 TT snowsurfer LS gentemstick",
-      "price": "89,000円",
-      "link": "https://paypayfleamarket.yahoo.co.jp/item/z536726574",
-      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0201/users/78f953858d78e54a7539dcc76a157008665cf4d7/i-img900x1200-1767235193578vgwsht.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-      "site": "ヤフーフリマ"
-    },
-    {
       "title": "★送料無料★GENTEMSTICK フローター 161 FLOATER ゲンテン スティック パウダー カービング GENTEM ",
       "price": "42,000円",
       "link": "https://paypayfleamarket.yahoo.co.jp/item/n1213112651",
@@ -101,6 +94,13 @@
       "price": "49,500円",
       "link": "https://paypayfleamarket.yahoo.co.jp/item/z571128888",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/users/6340aa60ff873f7ac65a8f088b0d5be8f60fa9d9/i-img900x1200-1772851017117tmd0f2.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフーフリマ"
+    },
+    {
+      "title": "K2 TT snowsurfer LS gentemstick",
+      "price": "89,000円",
+      "link": "https://paypayfleamarket.yahoo.co.jp/item/z536726574",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0201/users/78f953858d78e54a7539dcc76a157008665cf4d7/i-img900x1200-1767235193578vgwsht.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフーフリマ"
     },
     {
