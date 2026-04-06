@@ -2,14 +2,21 @@
   "keyword": "gentemstick",
   "minPrice": 30000,
   "maxPrice": 90000,
-  "lastUpdated": "2026/04/06 07:55",
-  "totalCount": 27,
+  "lastUpdated": "2026/04/06 13:25",
+  "totalCount": 29,
   "items": [
     {
       "title": "New!!",
       "price": "59,400円",
       "link": "https://auctions.yahoo.co.jp/jp/auction/l1225540295",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0204/user/5e9331e327fb33eb8e32d1d5ef005fb0eb555b8d9b810a93718a4e24ee434fd1/i-img768x1024-17754575533582d57vdu36.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフオク"
+    },
+    {
+      "title": "送料無料",
+      "price": "47,000円",
+      "link": "https://auctions.yahoo.co.jp/jp/auction/b1224689943",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/aefd4d89ac5bab17c04f4bad1ab1a0782d192cad47bf0cbb7b766087905e96f5/i-img900x1200-17748407916012gc13in73118.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフオク"
     },
     {
@@ -48,6 +55,13 @@
       "site": "ヤフオク"
     },
     {
+      "title": "New!!",
+      "price": "60,000円",
+      "link": "https://auctions.yahoo.co.jp/jp/auction/x1185489904",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0105/user/5ced48228c5712f4ee8eab2b39a9330eef43c9de5f86a27ff5f12a10c7d5fe9c/i-img900x1200-17476571559202qs62ya35.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフオク"
+    },
+    {
       "title": "Gentemstick Maxforce ゲンテンスティック マックスフォース",
       "price": "55,000円",
       "link": "https://paypayfleamarket.yahoo.co.jp/item/z552092718",
@@ -69,17 +83,17 @@
       "site": "ヤフーフリマ"
     },
     {
-      "title": "GENTEMSTICK 08-09 INDY POOLDECK 154 カスタムグラフィック",
-      "price": "82,000円",
-      "link": "https://paypayfleamarket.yahoo.co.jp/item/b1221924558",
-      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/65fd846d096d1dd67163de67f184218ad847f2b2152bd23841e2fc0b5f4e010c/i-img480x640-17727548236657l4nvtq34.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-      "site": "ヤフーフリマ"
-    },
-    {
       "title": "ゲンテン　gentemstick JALKA 125 パウダーボード ゲンテンスティック",
       "price": "58,000円",
       "link": "https://paypayfleamarket.yahoo.co.jp/item/z565437634",
       "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0202/users/cbd5f21d595f89224423ceb46e4f5851c21c593f/i-img675x1200-1772027987050yvnmhy.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "site": "ヤフーフリマ"
+    },
+    {
+      "title": "GENTEMSTICK 08-09 INDY POOLDECK 154 カスタムグラフィック",
+      "price": "82,000円",
+      "link": "https://paypayfleamarket.yahoo.co.jp/item/b1221924558",
+      "image": "https://auc-pctr.c.yimg.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0203/user/65fd846d096d1dd67163de67f184218ad847f2b2152bd23841e2fc0b5f4e010c/i-img480x640-17727548236657l4nvtq34.jpg?pri=s&w=298&h=298&ccw=298&cch=298&fill=1&fw=298&fh=298&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
       "site": "ヤフーフリマ"
     },
     {
